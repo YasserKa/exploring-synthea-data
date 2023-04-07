@@ -26,12 +26,12 @@ warnings.simplefilter(action="ignore", category=DeprecationWarning)
 
 # %% [markdown]
 # Information about the datasets can be found here: [CSV File Data Dictionary · synthetichealth/synthea Wiki](https://github.com/synthetichealth/synthea/wiki/CSV-File-Data-Dictionary)
-
+#
 # Notes: supplies dataset is empty
 
 # %% [markdown]
 # ### Finding similar patterns among patients who have three most common conditions
-
+#
 # Note: I don't have a background in health care, so there could be wrong
 # statements in this notebook
 
@@ -53,18 +53,17 @@ fig.update_layout(
 fig.show()
 
 # %% [markdown]
-
+#
 # **Sinusitis**, also known as rhinosinusitis, is inflammation of the mucous membranes that line the sinuses resulting in symptoms that may include thick nasal mucus, a plugged nose, and facial pain [Sinusitis - Wikipedia](https://en.wikipedia.org/wiki/Sinusitis)
-
+#
 # **Pharyngitis** is inflammation of the back of the throat, known as the pharynx [Pharyngitis - Wikipedia](https://en.wikipedia.org/wiki/Pharyngitis)
-
+#
 # **Acute bronchitis**, also known as a chest cold, is short-term bronchitis – inflammation of the bronchi (large and medium-sized airways) of the lungs [Acute bronchitis - Wikipedia](https://en.wikipedia.org/wiki/Acute_bronchitis)
-
+#
 # The common conditions seem to be related to an inflammation of a part of the respiratory system
 
-
 # %% [markdown]
-
+#
 # Let's see how these conditions are treated using medications and procedures
 
 # %%
@@ -82,6 +81,7 @@ medications_agg = medications_df.groupby( ["REASONDESCRIPTION", "DESCRIPTION"], 
 
 medications_agg.head()
 
+
 # %%
 
 procedures_df = dfs['procedures']
@@ -95,7 +95,7 @@ procedures_agg = procedures_df.groupby( ["REASONDESCRIPTION", "DESCRIPTION"], as
 procedures_agg.head()
 
 # %% [markdown]
-
+#
 # Other common patterns among common conditions (duration of conditions, observations)
 
 # %%
@@ -169,3 +169,11 @@ fig.update_layout(
 
 fig.show()
 
+# %% [markdown]
+# Machine leanring questions about the dataset
+#
+# 1- How can the data about patients be used to predict potential diseases they might have? (e.g. from observations and imaging_studies datasets, what're the probabilities for having a set of conditions)
+#
+# 2- How can the most effective treatment be picked for a patient with a certain set of conditions?
+#
+# 3- What's the probability for a condition to reoccur for a certain patient?
