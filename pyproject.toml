@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "syntheia-data-exploration"
+version = "0.1.0"
+description = ""
+authors = ["Yasser Kaddoura <yasser.kaddoura19@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "medical_care_exploration"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.5.3"
+numpy = "^1.24.2"
+plotly = "^5.14.1"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter-nbextensions-configurator = "^0.6.1"
+jupytext = "^1.14.5"
+jupyter-ascending = "^0.1.24"
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
