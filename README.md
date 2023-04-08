@@ -10,3 +10,18 @@ Resources about Synthea:
 - [Paper](https://academic.oup.com/jamia/article/25/3/230/4098271)
 - [Data Dictionary](https://github.com/synthetichealth/synthea)
 
+## Setting up the environment
+You will need python 3.10
+
+```bash
+# Create virtual env
+python -m venv .synthea-exploration-env
+# Activate it
+# On Linux
+source .synthea-exploration-env/bin/activate
+# On Windows
+# .\.synthea-exploration-env\Scripts\activate.bat
+pip install -r requirements.txt
+ ```
+
+The code can be found in the jupyter notebook `exploration/data_exploration.sync.ipynb`
