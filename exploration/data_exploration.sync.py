@@ -62,6 +62,7 @@ for observation in observations_all:
 # Pick a random patient
 patient_df = dfs['patients'].sample(n=1)
 id = patient_df['Id'].iloc[0]
+# Or a specific one
 id = 'e061409e-4b85-4ec1-b1f7-02677d51f763'
 observations_df_user = observations_df[observations_df['PATIENT'] == id].copy()
 
@@ -73,7 +74,6 @@ observations_df_user = observations_df_user.merge(
 fig = px.line(observations_df_user, x="DATE", y="VALUE",
               color="DESCRIPTION_observation", 
               custom_data=["DESCRIPTION_observation", "VALUE", "DESCRIPTION_encounter"], markers=True)
-
 
 fig.update_layout(
     title_text="Observations trajectory",
